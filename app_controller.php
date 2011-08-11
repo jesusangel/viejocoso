@@ -31,4 +31,38 @@
  * @subpackage    cake.app
  */
 class AppController extends Controller {
+	/**
+	 * components property
+	 *
+	 * @var array
+	 * @access public
+	 */
+	public $components = array(
+	//'Acl',
+                'Auth',
+                'RememberMe',
+                'Cookie',
+				'DebugKit.Toolbar',
+                'RequestHandler',
+                'Security'
+                
+                );
+
+                public function beforeFilter() {
+                	if (!$this->Auth->user('id'))
+                	{
+                		$this->RememberMe->check();
+                	}
+
+                	$admin = Configure::read('Routing.admin');
+                	if (isset($this->params[$admin]) && $this->params[$admin] && (!$this->Auth->user('id') || $this->Auth->user('username') != 'admin')) {
+                		$this->Session->setFlash(__('The page you tried to access is restricted. You have been redirected to the page below.', true), 'flash_bad');
+                		$this->redirect('/');
+                	}
+
+                	//User::store($this->Auth->user());
+                	$this->set('userId', $this->Auth->user('id'));
+                	$this->set('first_name', $this->Auth->user('first_name'));
+
+                }
 }
