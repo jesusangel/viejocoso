@@ -29,6 +29,9 @@
 		echo $this->Html->meta('icon');
 
 		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('generic');
+		echo $this->Html->css('paginators');
+		echo $this->Html->css('forms');
 
 		echo $scripts_for_layout;
 	?>
@@ -36,7 +39,7 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo $this->Html->link(__('CakePHP: the rapid development php framework', true), 'http://cakephp.org'); ?></h1>
+			<h1><?php echo $this->Html->link(__('viejocoso arquitectos', true), 'http://viejocoso.casa.local'); ?></h1>
 		</div>
 		<div id="content">
 
@@ -44,6 +47,7 @@
 
 			<?php echo $content_for_layout; ?>
 
+			<?php echo $this->Html->link('Fotos', array('controller' => 'photos', 'action' => 'index')); ?>
 		</div>
 		<div id="footer">
 			<?php echo $this->Html->link(

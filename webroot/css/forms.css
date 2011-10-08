@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+form {
+	width: auto;
+	margin: 0 10px;
+}
+
+form div.submit {
+	margin-left: 0px;
+	padding: 0px;
+}
+
+form div div {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+form .required label:after {
+	content: ' (*)';
+}
+
+form fieldset legend {
+	cursor: pointer;
+	font-size: 120%;
+	padding: 0px 15px;
+	background: no-repeat 5px .55em;
+	background-image: url('/img/menu_expanded.png');
+}
+
+form fieldset.collapsed legend {
+	background-image: url('/img/menu_collapsed.png');
+}
+
+form div.jstree div {
+	clear: none;
+	margin-bottom: 0px;
+	padding: 0px;
+	vertical-align: inherit;
+}
+
+form div.jstree input {
+	display: inline;
+	width: auto;
+	margin: 0px;
+	float: none;
+}
+
+input {
+	display: inline;
+	clear: none;
+}
+
+input[type="hidden"] {
+	padding: 0;
+}
+
+input[type="radio"], input[type="checkbox"] {
+		width: auto;
+}
+
+.form-error {
+	border-color: #f00;
+}
+
+div.auto_complete    {
+     position         :absolute;
+     width            :250px;
+     background-color :white;
+     border           :1px solid #888;
+     margin           :0px;
+     padding          :0px;
+} 
+li.selected {
+	background-color: #ffb;
+}
+
+/* Advanced search */
+form#advanced_search {
+}
+
+form#advanced_search table, form#advanced_search table tr, form#advanced_search table tr td {
+	padding: 1px;
+	text-align: inherit;
+	vertical-align: top;
+	background-color: inherit;
+	font-size: inherit;
+	border: none;
+}
+
+form#advanced_search input, form#advanced_search select {
+	font-size: 80%;
+	padding: 0 !important;
+}
+
+form#advanced_search input[type="text"] {
+	width: 90%;
+}
+
+/* Filter forms */
+div.filter form {
+	margin: 5px 0px;
+}
+
+div.filter input {
+	display: inline;
+	width: auto;
+	font-size: 80%;
+	clear: none;
+}
+
+div.filter input[type="submit"] {
+	padding: 2px;
+}
+
+div.filter label {
+	display: inline;
+	padding: 0px;
+	font-size: 80%;
+}
+
+/* Permissions forms */
+.role_permissions label, .user_permissions label {
+	display: inline;
+	font-size: 100%;
+}

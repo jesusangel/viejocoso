@@ -1,0 +1,12 @@
+@charset "UTF-8";
+div.comments {
+	clear: both;
+}
+
+div.no_comments {
+	margin: 10px 0px;
+}
+
+ul.comment-list li, ol.comment-list li {
+	margin: 10px;
+}

@@ -22,7 +22,7 @@ class Work extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'category_id' => array(
+		'work_category_id' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
 				//'message' => 'Your custom message here',
@@ -36,9 +36,9 @@ class Work extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
 	var $belongsTo = array(
-		'Category' => array(
-			'className' => 'Category',
-			'foreignKey' => 'category_id',
+		'WorkCategory' => array(
+			'className' => 'WorkCategory',
+			'foreignKey' => 'work_category_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

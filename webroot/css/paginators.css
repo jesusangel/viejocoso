@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+div.paginator-counter {
+	margin: 10px;
+}
+
+div.paginator {
+	margin: 10px;
+}
+
+div.paginator * {
+	display: inline;
+}

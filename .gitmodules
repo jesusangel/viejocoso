@@ -1,3 +1,15 @@
 [submodule "plugins/debug_kit"]
 	path = plugins/debug_kit
 	url = git://github.com/cakephp/debug_kit.git
+[submodule "vendors/swift_mailer"]
+	path = vendors/swift_mailer
+	url = git://github.com/swiftmailer/swiftmailer.git
+[submodule "plugins/recaptcha_plugin"]
+	path = plugins/recaptcha_plugin
+	url = git://github.com/tbsmcd/recaptcha_plugin.git
+[submodule "plugins/mi"]
+	path = plugins/mi
+	url = git://github.com/AD7six/mi.git
+[submodule "plugins/mi_development"]
+	path = plugins/mi_development
+	url = git://github.com/AD7six/mi_development.git
