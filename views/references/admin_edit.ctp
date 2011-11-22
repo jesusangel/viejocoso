@@ -7,7 +7,7 @@
 		echo $this->Form->input('title');
 		echo $this->Form->input('text');
 		echo $this->Form->input('url');
-		echo $this->Form->input('date');
+		echo $this->datePicker->picker('date', null, $this->Form);
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit', true));?>

@@ -6,7 +6,7 @@
 		echo $this->Form->input('title', array('label' => __('Título', true)));
 		echo $this->Form->input('text', array('label' => __('Descripción', true)));
 		echo $this->Form->input('url', array('label' => 'URL'));
-		echo $this->Form->input('date', array('label' => __('Fecha', true), 'maxYear' => date('Y')));
+		echo $this->datePicker->picker('date', array('label' => __('Fecha', true), 'maxYear' => date('Y')), $this->Form);
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Guardar', true));?>

@@ -1,15 +1,10 @@
 <div class="references index">
-	<h2><?php __('References');?></h2>
+	<h2><?php __('Referencias');?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<tr>
-			<th><?php echo $this->Paginator->sort('id');?></th>
-			<th><?php echo $this->Paginator->sort('title');?></th>
-			<th><?php echo $this->Paginator->sort('text');?></th>
-			<th><?php echo $this->Paginator->sort('url');?></th>
-			<th><?php echo $this->Paginator->sort('date');?></th>
-			<th><?php echo $this->Paginator->sort('created');?></th>
-			<th><?php echo $this->Paginator->sort('modified');?></th>
-			<th class="actions"><?php __('Actions');?></th>
+			<th><?php echo $this->Paginator->sort(__('Título', true), 'title');?></th>
+			<th><?php echo $this->Paginator->sort(__('Fecha', true), 'date');?></th>
+			<th class="actions"><?php __('Acciones');?></th>
 	</tr>
 	<?php
 	$i = 0;
@@ -20,13 +15,8 @@
 		}
 	?>
 	<tr<?php echo $class;?>>
-		<td><?php echo $reference['Reference']['id']; ?>&nbsp;</td>
 		<td><?php echo $reference['Reference']['title']; ?>&nbsp;</td>
-		<td><?php echo $reference['Reference']['text']; ?>&nbsp;</td>
-		<td><?php echo $reference['Reference']['url']; ?>&nbsp;</td>
 		<td><?php echo $reference['Reference']['date']; ?>&nbsp;</td>
-		<td><?php echo $reference['Reference']['created']; ?>&nbsp;</td>
-		<td><?php echo $reference['Reference']['modified']; ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View', true), array('action' => 'view', $reference['Reference']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit', true), array('action' => 'edit', $reference['Reference']['id'])); ?>
@@ -52,6 +42,6 @@
 <div class="actions">
 	<h3><?php __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Reference', true), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('Nueva referencia', true), array('action' => 'add')); ?></li>
 	</ul>
 </div>

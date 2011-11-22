@@ -2,6 +2,7 @@
 class ReferencesController extends AppController {
 
 	var $name = 'References';
+	var $helpers = array('datePicker');
 
 	function index() {
 		$this->Reference->recursive = 0;

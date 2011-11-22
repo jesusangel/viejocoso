@@ -26,7 +26,7 @@
 ?>
 <?php e('<?xml version="1.0" encoding="UTF-8"?>'); ?>
 <?php echo $html->docType('xhtml-strict'); ?>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<?php echo $html->charset(); ?>
 	<title>
@@ -36,17 +36,29 @@
 	<?php
 		echo $html->meta('icon');
 		
-		echo $javascript->link('utils.js');
-
-		echo $javascript->link('jquery/jquery.js');
-		echo $javascript->link('jquery/no_conflict.js');
+		echo $javascript->link(
+			array(
+				'utils.js',
+				'jquery-1.6.4.min',
+				//'no_conflict',
+				'jquery.bgiframe',	// Used by autocomplete and tooltip
+				'jquery.dimensions',// Required by tooltip and jdMenu
+				'jquery.tooltip.pack',
+				'date.js',
+            	'jquery.datePicker.js',
+            	'cake.datePicker.js',
+				'jquery/form_disable_enter.js',
+				'jquery/collapsible_fieldsets.js',
+				'jquery/close_messages.js',
+				'jquery/jquery.positionBy.js',	// Required by jdMenu
+				'jquery/jquery.jdMenu.js',
+				'jquery/jquery.form.js',		// Send forms via ajax
+				'jquery/jqModal.js',
+			)
+		);
+		
 		echo '<!-- http://docs.jquery.com/Using_jQuery_with_Other_Libraries -->';
 		
-		echo $javascript->link('jquery/jquery.bgiframe.js');	// Used by autocomplete and tooltip
-		echo $javascript->link('jquery/jquery.dimensions.js');	// Required by tooltip and jdMenu		
-		
-		echo $html->css('/js/jquery/jquery.tooltip.css');
-		echo $javascript->link('jquery/jquery.tooltip.js');
 		echo $javascript->codeBlock('
 			$j(function() {
 				$j("a, input, img").tooltip({
@@ -58,23 +70,22 @@
 			});
 		');
 		
-		echo $html->css('jquery.jdMenu.css');
-		echo $javascript->link('jquery/jquery.positionBy.js');	// Required by jdMenu
-		echo $javascript->link('jquery/jquery.jdMenu.js');
+		echo $html->css(
+			array(
+				'/js/jquery.tooltip.css',
+				'jquery.jdMenu.css',
+				'jqModal.css',
+				'datePicker.css',
+				'local',
+			)
+		);
 		
-		echo $javascript->link('jquery/jquery.form.js');		// Send forms via ajax
-		
-		echo $javascript->link('jquery/jqModal.js');
-		echo $html->css('jqModal.css');
 		echo $javascript->codeBlock('
 			$j().ready(function() {
 				$j("#deleteConfirmModalWindow").jqm({ajax: "@href", modal: true, trigger: "a.confirm", target: "#jqmContent"});
 			});
 		');
-		
-		echo $javascript->link('jquery/form_disable_enter.js');
-		echo $javascript->link('jquery/collapsible_fieldsets.js');
-		echo $javascript->link('jquery/close_messages.js');
+
 		
 		echo $html->css('/js/jquery/jquery-autocomplete/jquery.autocomplete.css');
 		echo $javascript->link('jquery/jquery-autocomplete/jquery.autocomplete.js');
@@ -89,21 +100,18 @@
 		} else {
 			echo $javascript->link('slimbox-2.02/slimbox2.js');
 		}
-		
-		echo $javascript->link(array(
-			'date.js',
-			'jquery.datePicker.js',
-			'cake.datePicker.js'
-		));
 				
-		echo $html->css('cake.generic');
-		echo $html->css('generic.css');
-		echo $html->css('forms.css');
-		echo $html->css('paginators.css');
-		echo $html->css('resources.css');
-		echo $html->css('attachments.css');
-		echo $html->css('comments.css');
-		echo $html->css('datePicker.css');
+		echo $html->css(
+			array(
+				'cake.generic',
+				'generic.css',
+				'forms.css',
+				'paginators.css',
+				'resources.css',
+				'attachments.css',
+				'comments.css'
+			)
+		);
 				
 		echo $scripts_for_layout;
 	?>
